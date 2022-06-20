@@ -19,9 +19,16 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+
+  var odd=0;
+  for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 == 1){
+      odd = odd + numbers[i]
+  }
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+return odd;
+}
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -36,10 +43,25 @@ function sumOdds(numbers) {
  * Hint: You need to turn the string into an array first
  * Another Hint: Use string methods to make it case-insensitive
  */
-function characterCount(string, c) {
-  // Your code here
+ function characterCount(string, c) {
+  let b;
+  var x = 0;
+  let str=[];
+  b=string.toLowerCase();
+
+  str = b.split("");
+
+  for(var i = 0;i < str.length ;i++){
+    if(str[i] == c.toLowerCase()){
+      x++;
+    }
+   
+  }
+  return x;
+  
+
 }
-// console.log(characterCount("Character Count is clever", "c"));
+console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * largestIncrement(numbers):
@@ -58,9 +80,16 @@ function characterCount(string, c) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here
+  var max = -1;
+  var temp;
+for (var i = 0; i < numbers.length - 1; i++)
+    {
+  temp = Math.abs(numbers[i] - numbers[i + 1]);
+  max = Math.max(max, temp);
+  }
+return max;
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
@@ -74,9 +103,20 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+let arr= [];
+for(var i = 0; i < numbers.length - 1; i++){
+  if(numbers[i]== x){
+    var x= 0;
+    for(var j = i+1; j < numbers.length; j++,x++){
+      arr[x] = numbers[j];
+    }
+    return arr;
+  }
+ 
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+
+}
+ console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
@@ -90,9 +130,11 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  // Your code here
+  return firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase()
+
+ // return abbreviate.toUpperCase;
 }
-// console.log(abbreviate("miss", "Stephane"));
+console.log(abbreviate("miss", "Stephane"));
 
 /**
  * isUpperCase(string):
@@ -105,7 +147,11 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
+  if (string.toUpperCase() === string) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -121,9 +167,10 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
+
+  return numbers.includes(x)
 }
-// console.log(elementInArray([5, 6, 7], 8));
+console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,

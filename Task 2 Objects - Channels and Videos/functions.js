@@ -14,12 +14,12 @@ const channels = require("./channels.json");
  * - returns the name of the channel
  ****************************************************************/
 function getChannelName(channel) {
-  console.log("heyheyhey");
-  console.log(channel);
+ // console.log("heyheyhey");
+ // console.log(channel);
  return channel.name;
 }
 
-console.log(getChannelName(channels[0]));
+//console.log(getChannelName(channels[0]));
 
 /**************************************************************
  * numberOfVideos(channel)
@@ -41,10 +41,10 @@ function numberOfVideos(channel) {
  * BONUS: use iteration method `.some()`
  ****************************************************************/
 function channelHasVideo(videoTitle, channel) {
- return channel.videos.some(video=> video.title ==videoTitle);
+ return channel.videos.some(video=> video.title == videoTitle);
 }
- console.log(channelHasVideo("The Universal S", channels[0]));
-console.log(channelHasVideo("The Universal S", channels[1]));
+//console.log(channelHasVideo("The Universal S", channels[0]));
+//console.log(channelHasVideo("The Universal S", channels[1]));
 
 /**************************************************************
  * getChannelByName(channelName, channels):
@@ -68,7 +68,7 @@ function getChannelByName(channelName, channels) {
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
-  return channels.find(channel => channel.videos.some(video=> video.title ==videoTitle));
+  return channels.find(channel => channel.videos.some(video=> video.title == videoTitle));
 }
 // console.log(getChannelByVideoTitle("The Universal S", channels));
 
@@ -83,11 +83,11 @@ function getChannelByVideoTitle(videoTitle, channels) {
 function searchChannels(query, channels) {
 
   return channels.filter(channel =>{
-    console.log("heyheyheyhey",channel.description.includes(query))
+  //  console.log("heyheyheyhey",channel.description.includes(query))
     return channel.description.includes(query)|| channel.name.includes(query)
   } );
 }
-console.log(searchChannels("The", channels))
+//console.log(searchChannels("The", channels))
 
 module.exports = {
   getChannelName,
